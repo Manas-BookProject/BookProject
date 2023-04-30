@@ -11,11 +11,5 @@ import java.util.List;
 public interface UserService {
 
 
-    SimpleResponse register(RegisterRequest registerRequest);
-
-    User findUserById(Long userId);
-
     List<User> findAllUsers();
-
-    UserTokenResponse authenticate(UserRequest userRequest);
 }

@@ -1,5 +1,6 @@
-package com.manas.config;
+package com.manas.config.security;
 
+import com.manas.repository.AccountRepository;
 import com.manas.repository.UserRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Bean;
@@ -17,17 +18,14 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 
 @Configuration
-@EnableWebSecurity
-@EnableMethodSecurity
 @RequiredArgsConstructor
 public class WebAppSecurity {
 
-    private final UserRepository userRepository;
-
+    private final AccountRepository accountRepository;
 
     @Bean
     public UserDetailsService userDetailsService(){
-        return email-> (UserDetails) userRepository.findUserByAccount_Email(email)
+        return email-> (UserDetails) accountRepository.findByEmail(email)
                 .orElseThrow(()-> new UsernameNotFoundException(email+ " is not found!"));
     }
 

@@ -22,7 +22,7 @@ import java.io.IOException;
 public class JwtFilter extends OncePerRequestFilter {
 
     private final UserDetailsService userDetailsService;
-    private final JwtUtil jwtUtil;
+    private final JwtService jwtService;
 
     @Override
     protected void doFilterInternal(@NonNull HttpServletRequest request,
@@ -36,7 +36,7 @@ public class JwtFilter extends OncePerRequestFilter {
                         "Invalid JWT Token In Bearer Header");
             } else {
                 try {
-                    String email = jwtUtil.validateTokenAndRetrieveClaim(jwt);
+                    String email = jwtService.extractUsername(jwt);
                     UserDetails userDetails = userDetailsService.loadUserByUsername(email);
                     UsernamePasswordAuthenticationToken authenticationToken =
                             new UsernamePasswordAuthenticationToken(
