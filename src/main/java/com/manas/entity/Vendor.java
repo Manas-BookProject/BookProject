@@ -20,7 +20,7 @@ import static jakarta.persistence.CascadeType.ALL;
 public class Vendor {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "vendor_gen")
-    @SequenceGenerator(name = "vendor_gen", sequenceName = "vendor_seq")
+    @SequenceGenerator(name = "vendor_gen", sequenceName = "vendor_seq", allocationSize = 1,initialValue = 7)
     private Long id;
     private String firstName;
     private String lastName;

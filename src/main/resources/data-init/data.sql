@@ -1,11 +1,10 @@
 insert into accounts (id, email, password, role)
-VALUES (1, 'admin@gmai.com', 'admin', 'ADMIN'),
-       (2, 'burulai@gmai.com', 'burulai', 'CUSTOMER'),
-       (3, 'eliza@gmai.com', 'eliza', 'CUSTOMER'),
-       (4, 'isxak@gmai.com', 'ishkak', 'CUSTOMER'),
-       (5, 'uluk@gmai.com', 'uluk', 'CUSTOMER'),
-       (6, 'kulen@gmai.com', 'kulen', 'ADMIN'),
-       (7, 'kulen1@gmai.com', 'kulen1', 'ADMIN');
+VALUES (1, 'admin@gmai.com', '$2a$12$rDjMLuLWSLuVwHGXjH5G8ulw/JlMR9mZxK2ejPPryiyFz9mYhpMeW', 'ADMIN'),
+       (2, 'burulai@gmai.com', '$2a$12$m49jDeGHD.NgLjV8QvvRFOOIPSukF/..fjTn582XV5.MF3cYNexAC', 'ADMIN'),
+       (3, 'eliza@gmai.com', '$2a$12$QqvBUCA9tHjBBZ6wcALb9epDUEZYAJEUlh5c8.BuRkE4j4LsxG3Z6', 'CUSTOMER'),
+       (4, 'ishkak@gmai.com', '$2a$12$77UEkv8SDulio8t6Wkjz4Owpy7jCYrjScQULwLWo/Ck4CKAO02uIS', 'CUSTOMER'),
+       (5, 'uluk@gmai.com', '$2a$12$gd.MYsPeoBxGsiCqpCJGcOSsPN00bIgMpAd0VfOtWzLDx./M.LIFy', 'CUSTOMER'),
+       (6, 'kulen@gmai.com', '$2a$12$2Yvz76h6ipGW5y9ekz8vL.b2JvgCzCjwX7Fu56JFYnjMvrGqsqmPy', 'CUSTOMER');
 
 
 insert into users (id, first_name, last_name, phone_number, account_id)

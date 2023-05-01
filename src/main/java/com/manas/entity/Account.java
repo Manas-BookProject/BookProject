@@ -22,7 +22,7 @@ import static jakarta.persistence.CascadeType.*;
 public class Account implements UserDetails {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "account_gen")
-    @SequenceGenerator(name = "account_gen", sequenceName = "account_seq")
+    @SequenceGenerator(name = "account_gen", sequenceName = "account_seq", allocationSize = 1, initialValue = 7)
     private Long id;
 
     private String email;

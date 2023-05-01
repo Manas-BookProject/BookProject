@@ -1,6 +1,6 @@
 package com.manas.dto.request;
 
-public record UserRequest (
+public record AuthenticationRequest (
         String login,
         String password
 ){

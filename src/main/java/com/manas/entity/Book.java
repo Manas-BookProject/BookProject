@@ -11,7 +11,7 @@ import static jakarta.persistence.CascadeType.*;
 public class Book {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "book_seq")
-    @SequenceGenerator(name = "book_seq")
+    @SequenceGenerator(name = "book_seq", allocationSize = 1, initialValue = 7)
     @Column(name = "id", nullable = false)
     private Long id;
 

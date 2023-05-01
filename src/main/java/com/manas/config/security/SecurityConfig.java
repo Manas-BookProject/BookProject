@@ -22,15 +22,13 @@ public class SecurityConfig {
     private final JwtFilter jwtFilter;
     private final AuthenticationProvider authenticationProvider;
 
-
-
     @Bean
     public SecurityFilterChain filter(HttpSecurity http) throws Exception {
         http
                 .csrf()
                 .disable()
                 .authorizeHttpRequests()
-                .requestMatchers("/api/auth/**").permitAll()
+//                .requestMatchers("/api/auth/**").permitAll()
                 .anyRequest()
                 .permitAll()
                 .and()
