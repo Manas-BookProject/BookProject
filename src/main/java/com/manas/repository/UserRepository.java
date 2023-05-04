@@ -1,7 +1,9 @@
 package com.manas.repository;
 
+import com.manas.dto.response.UserResponse;
 import com.manas.entity.User;
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Query;
 
 import java.util.List;
 import java.util.Optional;
@@ -9,9 +11,9 @@ import java.util.Optional;
 
 public interface UserRepository extends JpaRepository<User, Long> {
 
-    @Override
-    List<User> findAll();
-
-    Optional<User> getUserById(Long id);
+    @Query("select new com.manas.dto.response.UserResponse(" +
+            "u.id,u.firstName,u.lastName,u.phoneNumber,u.account.email) " +
+            "from User u")
+    List<UserResponse> getAllUsers();
 
 }

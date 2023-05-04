@@ -1,10 +1,7 @@
 package com.manas.entity;
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
 import java.time.LocalDate;
 import java.util.List;
@@ -17,6 +14,7 @@ import static jakarta.persistence.CascadeType.ALL;
 @Table(name = "vendor")
 @NoArgsConstructor
 @AllArgsConstructor
+@Builder
 public class Vendor {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "vendor_gen")
@@ -25,6 +23,7 @@ public class Vendor {
     private String firstName;
     private String lastName;
 
+    private String phoneNumber;
     @Column(name = "is_active")
     private Boolean isActive;
     @Column(name = "created_at")
