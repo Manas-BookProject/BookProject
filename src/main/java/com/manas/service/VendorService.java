@@ -7,5 +7,5 @@ public interface VendorService {
     //save, findById, getAll, getWithSearch,
     // update, delete, activateDeActivateVendor, exportVendorExcel
 
-    SimpleResponse saveVendor(VendorSaveRequest vendorRequest);
+    SimpleResponse save(VendorSaveRequest vendorRequest);
 }
